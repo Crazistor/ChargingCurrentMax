@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Charging Current Max</string>
+    <string name="save">"Save"</string>
+    <string name="def">"Default"</string>
+    <string name="mA">"mA"</string>
+    <string name="error">"Error!"</string>
+    <string name="root">"Root not Found!"</string>
+    <string name="success_save">"Success Save!"</string>
+    <string name="success_def">"Success Default Current Max!"</string>
+    <string name="file_not_found">"The application is not supported on your firmware</string>
+</resources>
