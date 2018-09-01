@@ -10,8 +10,8 @@ android {
         applicationId "com.ph03nix_x.charging_current_max"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 12
-        versionName "1.0"
+        versionCode 14
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
