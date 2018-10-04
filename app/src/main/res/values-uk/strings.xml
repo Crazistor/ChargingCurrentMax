@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Максимальний струм зарядки</string>
+    <string name="save">Зберегти</string>
+    <string name="def">Скидання</string>
+    <string name="mA">mA</string>
+    <string name="error">Помилка!</string>
+    <string name="root">Рут не знайден!</string>
+    <string name="success_save">Успішне збереження</string>
+    <string name="success_def">Успішне скидання максимального струму зарядки!</string>
+    <string name="file_not_found">Ваше Ядро не підтримує цю програму</string>
+    <string name="github">GitHub</string>
+    <string name="_4pda">4PDA</string>
+    <string name="telegram">Telegram</string>
+    <string name="about">Про програму</string>
+    <string name="about_message1">"Програма призначена для зміни максимального струму заряджання.\n\nРозробник: Ph03niX-X.\n\nВерсія: "</string>
+    <string name="about_message2">"\n\nЗбірка: "</string>
+</resources>

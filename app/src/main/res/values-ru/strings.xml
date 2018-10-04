@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Максимальный ток зарядки</string>
+    <string name="save">Сохр.</string>
+    <string name="def">Сброс</string>
+    <string name="mA">mA</string>
+    <string name="error">Ошибка!</string>
+    <string name="root">Рут не найден!</string>
+    <string name="success_save">Успешное сохранение</string>
+    <string name="success_def">Успешный сброс максимального тока зарядки!</string>
+    <string name="file_not_found">Ваше Ядро не поддерживает данное приложение</string>
+    <string name="github">GitHub</string>
+    <string name="_4pda">4PDA</string>
+    <string name="telegram">Telegram</string>
+    <string name="about">О приложении</string>
+    <string name="about_message1">"Программа предназначена для изменения максимального тока зарядки.\n\nРазработчик: Ph03niX-X.\n\nВерсия: "</string>
+    <string name="about_message2">"\n\nСборка: "</string>
+</resources>

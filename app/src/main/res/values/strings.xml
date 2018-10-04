@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Charging Current Max</string>
-    <string name="save">"Save"</string>
-    <string name="def">"Default"</string>
+    <string name="save">Save</string>
     <string name="mA">"mA"</string>
     <string name="error">"Error!"</string>
     <string name="root">"Root not Found!"</string>
     <string name="success_save">"Success Save!"</string>
-    <string name="success_def">"Success Default Current Max!"</string>
-    <string name="file_not_found">"The application is not supported on your firmware</string>
+    <string name="success_def">Successful reset of the maximum charging current!</string>
+    <string name="file_not_found">Your kernel does not support this application</string>
+    <string name="github">GitHub</string>
+    <string name="_4pda">4PDA</string>
+    <string name="telegram">Telegram</string>
+    <string name="about">About</string>
+    <string name="about_message1">"The program is designed to change the maximum charging current.\n\nDeveloper: Ph03niX-X.\n\nVersion: "</string>
+    <string name="about_message2">"\n\nBuild: "</string>
+    <string name="def">Reset</string>
 </resources>

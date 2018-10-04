@@ -1,5 +1,6 @@
 package com.ph03nix_x.charging_current_max
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -29,14 +30,13 @@ class MainActivity : AppCompatActivity() {
         try {
 
             java.lang.Runtime.getRuntime().exec("su")
-        } catch (e: Exception) {
-            var dialog = AlertDialog.Builder(this).setTitle(getString(R.string.error)).setMessage(getString(R.string.root)).setPositiveButton("OK")
+        } catch (e: java.io.IOException) {
+            AlertDialog.Builder(this).setTitle(getString(R.string.error)).setMessage(getString(R.string.root)).setPositiveButton("OK")
             { dialog_, _ ->
 
                 dialog_.dismiss()
                 finish()
-            }
-            dialog.show()
+            }.show()
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,17 +49,29 @@ class MainActivity : AppCompatActivity() {
             R.id.save ->
             {
                 var save_ = mA_text?.text.toString().toInt() * 1000
-                Runtime.getRuntime().exec("su -c echo \"${save_}\" > /sys/class/power_supply/battery/constant_charge_current_max")
+                Runtime.getRuntime().exec("su -c echo \"$save_\" > /sys/class/power_supply/battery/constant_charge_current_max")
+                getSharedPreferences("preferences", Context.MODE_PRIVATE).edit().putInt("current", save_).apply()
                 Toast.makeText(this, getString(R.string.success_save), Toast.LENGTH_LONG).show()
             }
             R.id.default_ ->
             {
                 var prefs = getSharedPreferences("preferences", Context.MODE_PRIVATE)
-                var save_ = prefs.getString("mA_default", null).toInt() * 1000
-                Runtime.getRuntime().exec("su -c echo \"${save_}\" > /sys/class/power_supply/battery/constant_charge_current_max")
+                var save_ = prefs.getString("mA_default", null)!!.toInt() * 1000
+                Runtime.getRuntime().exec("su -c echo \"$save_\" > /sys/class/power_supply/battery/constant_charge_current_max")
                 Toast.makeText(this, getString(R.string.success_def), Toast.LENGTH_LONG).show()
                 runOnUiThread { mA_text?.setText(save_.toString()) }
             }
+            R.id.github -> startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://github.com/Ph03niX-X/ChargingCurrentMax")))
+            R.id.telegram -> startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://t.me/Ph03niX_X")))
+            R.id._4pda -> startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse("http://4pda.ru/forum/index.php?showtopic=915686")))
+            R.id.about -> {
+            var version: String = this.packageManager.getPackageInfo(packageName, 0).versionName
+            var build: Int = this.packageManager.getPackageInfo(packageName, 0).versionCode
+            AlertDialog.Builder(this).setTitle(getString(R.string.about))
+                    .setMessage(getString(R.string.about_message1) + version + getString(R.string.about_message2) + build)
+                    .setPositiveButton("OK") {dialog, _ -> dialog.dismiss()}
+                    .show()
+        }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -80,12 +92,11 @@ fun ReadFile(): String?
     }
     catch (e: FileNotFoundException)
     {
-var dialog = AlertDialog.Builder(this).setTitle(getString(R.string.error)).setMessage(getString(R.string.file_not_found)).setPositiveButton("OK")
-{ dialog, _ ->
-    dialog.dismiss()
-    finish()
-}
-        dialog.show()
+        AlertDialog.Builder(this).setTitle(getString(R.string.error)).setMessage(getString(R.string.file_not_found)).setPositiveButton("OK")
+        { dialog, _ ->
+            dialog.dismiss()
+            finish()
+        }.show()
     }
     return text_
 }

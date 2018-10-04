@@ -2,14 +2,30 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/save"
-        android:icon="@drawable/save"
-        app:showAsAction="ifRoom"
-        android:title="@string/save" />
+    android:id="@+id/save"
+    app:showAsAction="ifRoom"
+    android:title="@string/save" />
     <item
         android:id="@+id/default_"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/def"
         android:title="@string/def"
+        />
+    <item
+        android:id="@+id/github"
+        app:showAsAction="ifRoom"
+        android:title="@string/github" />
+    <item
+        android:id="@+id/telegram"
+        app:showAsAction="ifRoom"
+        android:title="@string/telegram"
+        />
+    <item
+        android:id="@+id/_4pda"
+        app:showAsAction="ifRoom"
+        android:title="@string/_4pda" />
+    <item
+        android:id="@+id/about"
+        app:showAsAction="ifRoom"
+        android:title="@string/about"
         />
 </menu>
